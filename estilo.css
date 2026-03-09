@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3e5f5;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    color: #6610ac;
+    margin-bottom: 20px;
+}
+
+#sobre-mim p::first-letter {
+    font-size: 2.5rem;
+    font-weight: bold;
+    float: left;
+    margin-right: 8px;
+}
+
+#habilidades li:nth-child(odd) {
+    color: #8e24aa;
+    font-weight: bold;
+}
+
+.projeto {
+    background-color: #ffffff;
+    border: 1px solid #ce93d8;
+    padding: 15px;
+    margin: 10px;
+    width: 45%; 
+    display: inline-block;
+    vertical-align: top; 
+    border-radius: 8px;
+    transition: background-color 0.3s; 
+}
+
+.projeto:hover {
+    background-color: #f8bbd0;
+    border: 2px solid #ce93d8;
+    padding: 15px;
+    margin: 10px;
+    display: inline-block;
+    width:45%;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+footer {
+    margin-top: 30px;
+    padding: 10px;
+    border-top: 2px solid #4a148c;
+    text-align: center;
+}
