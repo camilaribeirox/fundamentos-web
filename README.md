@@ -1,4 +1,4 @@
-# 💻 Desenvolvimento Web - IFSP
+# 💻 Desenvolvimento Web
 
 Repositório destinado a guardar os projetos e atividades práticas da disciplina de Desenvolvimento Web do curso de Análise e Desenvolvimento de Sistemas.
 
