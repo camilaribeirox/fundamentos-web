@@ -8,3 +8,5 @@ Aqui registro minha evolução prática na disciplina, documentando os exercíci
 ## Tecnologias Utilizadas
 * HTML5
 * CSS3
+* Java Script
+  
