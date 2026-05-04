@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Gerenciador de Tarefas</h1>
+        
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-6 d-flex">
+                <input type="text" id="inputTarefa" class="form-control me-2" placeholder="Digite uma nova tarefa...">
+                <button id="btnAdicionar" class="btn btn-primary">Adicionar</button>
+            </div>
+        </div>
+
+        <div class="row" id="containerTarefas">
+        </div>
+    </div>
+
+    <script>
+        const inputTarefa = document.getElementById("inputTarefa");
+        const btnAdicionar = document.getElementById("btnAdicionar");
+        const containerTarefas = document.getElementById("containerTarefas");
+
+        btnAdicionar.addEventListener("click", () => {
+            
+            const textoTarefa = inputTarefa.value;
+
+            if (textoTarefa.trim() === "") {
+                alert("Por favor, digite uma tarefa válida.");
+                return;
+            }
+
+            const divColuna = document.createElement("div");
+            divColuna.className = "col-md-4 mb-3";
+
+            const card = document.createElement("div");
+            card.className = "card text-white bg-success h-100"; 
+
+            const cardBody = document.createElement("div");
+            cardBody.className = "card-body";
+
+            const textoCard = document.createElement("p");
+            textoCard.className = "card-text fw-bold";
+            textoCard.innerText = textoTarefa; 
+
+            const divBotoes = document.createElement("div");
+            divBotoes.className = "d-flex justify-content-between mt-3";
+
+            const btnAlta = document.createElement("button");
+            btnAlta.className = "btn btn-light btn-sm text-danger fw-bold";
+            btnAlta.innerText = "Alta";
+            btnAlta.addEventListener("click", () => {
+                card.className = "card text-white bg-danger h-100"; 
+            });
+
+            const btnMedia = document.createElement("button");
+            btnMedia.className = "btn btn-light btn-sm text-warning fw-bold";
+            btnMedia.innerText = "Média";
+            btnMedia.addEventListener("click", () => {
+                card.className = "card text-dark bg-warning h-100"; 
+            });
+
+            const btnBaixa = document.createElement("button");
+            btnBaixa.className = "btn btn-light btn-sm text-success fw-bold";
+            btnBaixa.innerText = "Baixa";
+            btnBaixa.addEventListener("click", () => {
+                card.className = "card text-white bg-success h-100"; 
+            });
+
+            divBotoes.appendChild(btnAlta);
+            divBotoes.appendChild(btnMedia);
+            divBotoes.appendChild(btnBaixa);
+
+            cardBody.appendChild(textoCard);
+            cardBody.appendChild(divBotoes);
+            
+            card.appendChild(cardBody);
+            divColuna.appendChild(card);
+            
+            containerTarefas.appendChild(divColuna);
+
+            inputTarefa.value = "";
+        });
+    </script>
+</body>
+</html>
